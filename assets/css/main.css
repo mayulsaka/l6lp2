@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -105,47 +106,67 @@ h2.lead .leadJa {
   }
 }
 
-.to-top {
+#back-to-top {
   position: fixed;
   z-index: 100;
   right: 4.1025641026vw;
-  bottom: 42.3076923077vw;
+  bottom: 4.1025641026vw;
+  visibility: hidden; /* マウスイベントを防ぐため */
+  width: 10.2564102564vw;
+  height: 10.2564102564vw;
+  padding: 10px 20px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
+  text-align: center;
+  opacity: 0; /* 最初は非表示 */
+  background: url(/assets/image/to-top.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 @media screen and (min-width: 768px) {
-  .to-top {
-    right: 9%;
-    bottom: 8.6666666667vw;
+  #back-to-top {
+    right: 1.3333333333vw;
+    bottom: 1.3333333333vw;
     width: 3.3333333333vw;
     height: 3.3333333333vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  .to-top {
-    bottom: 6.5rem;
+  #back-to-top {
+    right: 9.375rem;
+    bottom: 1rem;
     width: 2.5rem;
     height: 2.5rem;
   }
 }
 
+#back-to-top.show {
+  visibility: visible; /* クリック可能に */
+  opacity: 1; /* 表示 */
+}
+
 .main-visual {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   max-width: 100%;
   height: 115.3846153846vw;
   margin: 0 auto;
   margin-bottom: 27.4358974359vw;
+  padding-top: 107.6923076923vw;
+  padding-left: 5.641025641vw;
   background: url(/assets/image/main-visual_sp.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -155,6 +176,8 @@ h2.lead .leadJa {
   .main-visual {
     height: 60vw;
     margin-bottom: 0;
+    padding-top: 22.5vw;
+    padding-left: 15vw;
     background: url(/assets/image/main-visual.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -166,6 +189,8 @@ h2.lead .leadJa {
 @media screen and (min-width: 1200px) {
   .main-visual {
     height: 45rem;
+    padding-top: 16.875rem;
+    padding-left: 13.75rem;
   }
 }
 .main-visual__main-logo {
@@ -192,9 +217,6 @@ h2.lead .leadJa {
   }
 }
 .main-visual__main-container {
-  position: absolute;
-  bottom: -24%;
-  left: 6%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,22 +227,19 @@ h2.lead .leadJa {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   max-width: 91.7948717949vw;
-  margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .main-visual__main-container {
-    top: 66%;
-    left: 27%;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    max-width: 100vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main-visual__main-container {
+    max-width: 75rem;
   }
 }
 .main-visual__main-title-first {
@@ -280,7 +299,7 @@ h2.lead .leadJa {
     padding-bottom: 3rem;
   }
 }
-.cta__button-container {
+.cta__cta-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,7 +320,7 @@ h2.lead .leadJa {
   background-color: #f0f4ff;
 }
 @media screen and (min-width: 768px) {
-  .cta__button-container {
+  .cta__cta-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -315,13 +334,13 @@ h2.lead .leadJa {
   }
 }
 @media screen and (min-width: 1200px) {
-  .cta__button-container {
+  .cta__cta-container {
     width: 62.5rem;
     height: 9.125rem;
     padding: 2.5rem 3rem;
   }
 }
-.cta__button-title-first {
+.cta__cta-title {
   margin-bottom: 0.7692307692vw;
   text-align: center;
   letter-spacing: 0.4615384615vw;
@@ -329,48 +348,49 @@ h2.lead .leadJa {
   font-size: 4.6153846154vw;
 }
 @media screen and (min-width: 768px) {
-  .cta__button-title-first {
+  .cta__cta-title {
     margin-bottom: 0;
     letter-spacing: 0.2vw;
     font-size: 2vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  .cta__button-title-first {
+  .cta__cta-title {
     letter-spacing: 0.15rem;
     font-size: 1.5rem;
   }
 }
-.cta__button-title-second {
+.cta__cta-price {
   text-align: center;
   color: #111;
   font-size: 3.5897435897vw;
 }
 @media screen and (min-width: 768px) {
-  .cta__button-title-second {
+  .cta__cta-price {
     text-align: left;
     font-size: 1.3333333333vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  .cta__button-title-second {
+  .cta__cta-price {
     font-size: 1rem;
   }
 }
-.cta .tax {
+.cta__cta-price .tax {
   margin-right: 2.0512820513vw;
 }
 @media screen and (min-width: 768px) {
-  .cta .tax {
+  .cta__cta-price .tax {
     margin-right: 1.0833333333vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  .cta .tax {
+  .cta__cta-price .tax {
     margin-right: 0.8125rem;
   }
 }
-.cta__button-list-group {
+
+.button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -386,14 +406,14 @@ h2.lead .leadJa {
           justify-content: center;
 }
 @media screen and (min-width: 768px) {
-  .cta__button-list-group {
+  .button {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
 }
-.cta__button-link {
+.button__button-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -415,7 +435,7 @@ h2.lead .leadJa {
   line-height: 2.25;
 }
 @media screen and (min-width: 768px) {
-  .cta__button-link {
+  .button__button-link {
     width: 25vw;
     height: 4.8333333333vw;
     border-radius: 2.4166666667vw;
@@ -423,36 +443,51 @@ h2.lead .leadJa {
   }
 }
 @media screen and (min-width: 1200px) {
-  .cta__button-link {
+  .button__button-link {
     width: 18.75rem;
     height: 3.625rem;
     border-radius: 1.8125rem;
     font-size: 1.125rem;
   }
 }
-.cta__button-shop-btn {
+.button__button-link * {
+  outline: 1px solid red;
+}
+.button__button-onlineshop {
   margin-top: 5.1282051282vw;
   margin-bottom: 5.1282051282vw;
   background-color: #46c4db;
 }
 @media screen and (min-width: 768px) {
-  .cta__button-shop-btn {
+  .button__button-onlineshop {
     margin-top: 0;
     margin-right: 2.6666666667vw;
     margin-bottom: 0;
   }
 }
 @media screen and (min-width: 1200px) {
-  .cta__button-shop-btn {
+  .button__button-onlineshop {
     margin-right: 2rem;
   }
 }
-.cta__button-buy-btn {
+.button__button-buy {
   background-color: #5dd5ab;
 }
 
 .product {
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   max-width: 100%;
   height: 174.358974359vw;
   margin: 0 auto;
@@ -467,6 +502,8 @@ h2.lead .leadJa {
 @media screen and (min-width: 768px) {
   .product {
     height: 45.8333333333vw;
+    padding-top: 10vw;
+    padding-right: 20vw;
     background: url(/assets/image/pht_product.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -478,15 +515,17 @@ h2.lead .leadJa {
 @media screen and (min-width: 1200px) {
   .product {
     height: 34.375rem;
+    padding-top: 7.5rem;
+    padding-right: 15rem;
   }
 }
 .product__product-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -494,14 +533,13 @@ h2.lead .leadJa {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  max-width: 91.7948717949vw;
   margin: 0 auto;
+  padding-right: 4.1025641026vw;
+  padding-left: 4.1025641026vw;
 }
 @media screen and (min-width: 768px) {
   .product__product-container {
-    position: absolute;
-    top: 50%;
-    left: 69.5%;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -509,9 +547,9 @@ h2.lead .leadJa {
         -ms-flex-pack: start;
             justify-content: flex-start;
     width: 35.75vw;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    margin: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -545,14 +583,14 @@ h2.lead .leadJa {
 }
 @media screen and (min-width: 768px) {
   .product__product-title-second {
-    margin-bottom: 0.8333333333vw;
+    margin-bottom: 1.1666666667vw;
     text-align: left;
     font-size: 2vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .product__product-title-second {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.875rem;
     font-size: 1.5rem;
   }
 }
@@ -600,13 +638,13 @@ h2.lead .leadJa {
           justify-content: center;
   width: 100%;
   margin: 0 auto;
-  padding: 0 4.1025641026vw;
+  padding: 4.6153846154vw;
 }
 @media screen and (min-width: 768px) {
   .voice__voice-container {
     max-width: 100vw;
-    padding: 0 1.3333333333vw;
-    padding-bottom: 1.6666666667vw;
+    padding: 0;
+    padding-bottom: 1.25vw;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -617,25 +655,25 @@ h2.lead .leadJa {
 }
 .voice .lead {
   padding-top: 11.5384615385vw;
-  padding-bottom: 2.5641025641vw;
+  padding-bottom: 1.2820512821vw;
 }
 @media screen and (min-width: 768px) {
   .voice .lead {
     padding-top: 5.8333333333vw;
-    padding-bottom: 1.25vw;
+    padding-bottom: 2.9166666667vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .voice .lead {
     padding-top: 4.375rem;
-    padding-bottom: 0.625rem;
+    padding-bottom: 2.1875rem;
   }
 }
 
 .visual {
-  max-width: 80%;
+  max-width: 85%;
   margin: 0 auto;
-  margin-top: 7.6923076923vw;
+  margin-top: 2.5641025641vw;
   margin-bottom: 0;
   padding: 0;
 }
@@ -651,18 +689,15 @@ h2.lead .leadJa {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    max-width: 88%;
-    margin-top: 3.75vw;
-    gap: 3.3333333333vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 0.4166666667vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .visual {
-    margin-top: 2.8125rem;
-    gap: 2.5rem;
+    margin-top: 0.3125rem;
   }
 }
 .visual__voice-card {
@@ -684,15 +719,15 @@ h2.lead .leadJa {
   margin: 0 auto;
   margin-right: 2.5641025641vw;
   margin-left: 2.5641025641vw;
-  padding: 8.9743589744vw 3.8461538462vw 0 3.8461538462vw;
+  padding: 8.9743589744vw 3.8461538462vw 0 2.5641025641vw;
   background-color: #dbf7f9;
 }
 @media screen and (min-width: 768px) {
   .visual__voice-card {
     width: 25vw;
     height: 32.3333333333vw;
-    margin-right: 1.6666666667vw;
-    margin-left: 1.6666666667vw;
+    margin-right: 1.25vw;
+    margin-left: 1.25vw;
     padding: 3.3333333333vw 1.6666666667vw;
   }
 }
@@ -700,8 +735,8 @@ h2.lead .leadJa {
   .visual__voice-card {
     width: 18.75rem;
     height: 24.25rem;
-    margin-right: 1.25rem;
-    margin-left: 1.25rem;
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
     padding: 2.5rem 1.25rem;
   }
 }
@@ -722,24 +757,27 @@ h2.lead .leadJa {
   width: 20.5128205128vw;
   height: 20.5128205128vw;
   margin: 0 auto;
-  margin-bottom: 7.6923076923vw;
+  margin-bottom: 8.9743589744vw;
+  padding-top: 1.6666666667vw;
 }
 @media screen and (min-width: 768px) {
   .visual__voice-figure {
     width: 8.3333333333vw;
     height: 8.3333333333vw;
-    margin-bottom: 2.5vw;
+    margin-bottom: 3.3333333333vw;
+    padding-top: 2.5vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .visual__voice-figure {
     width: 6.25rem;
     height: 6.25rem;
-    margin-bottom: 1.875rem;
+    margin-bottom: 2.5rem;
+    padding-top: 2.5vw;
   }
 }
 .visual__voice-figure img {
-  margin-bottom: 1.2820512821vw;
+  margin-bottom: 2.0512820513vw;
 }
 @media screen and (min-width: 768px) {
   .visual__voice-figure img {
@@ -767,21 +805,83 @@ h2.lead .leadJa {
   }
 }
 .visual__voice-detail {
-  width: 68.7179487179vw;
+  text-align: left;
   font-size: 3.5897435897vw;
   line-height: 2;
 }
 @media screen and (min-width: 768px) {
   .visual__voice-detail {
-    width: 22.3333333333vw;
     font-size: 1.3333333333vw;
     line-height: 1.75;
   }
 }
 @media screen and (min-width: 1200px) {
   .visual__voice-detail {
-    width: 16.75rem;
     font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+/* Arrows → jsでスライダーボタン設定したので今回不要に */
+/* Dots →ここはjsで設定したスライダーボタンに無いので必要 */
+.slick-dots {
+  bottom: -5.641025641vw;
+}
+@media screen and (min-width: 768px) {
+  .slick-dots {
+    bottom: -3.8461538462vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slick-dots {
+    bottom: -2.1875rem;
+  }
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8.2051282051vw;
+  margin: auto;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .slide-arrow {
+    width: 4vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slide-arrow {
+    width: 3rem;
+  }
+}
+
+.prev-arrow {
+  left: -7.6923076923vw;
+}
+@media screen and (min-width: 768px) {
+  .prev-arrow {
+    left: -5.4166666667vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .prev-arrow {
+    left: -4.0625rem;
+  }
+}
+
+.next-arrow {
+  right: -7.6923076923vw;
+}
+@media screen and (min-width: 768px) {
+  .next-arrow {
+    right: -5.4166666667vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .next-arrow {
+    right: -4.0625rem;
   }
 }
 
@@ -812,19 +912,19 @@ h2.lead .leadJa {
   }
 }
 .qa .lead {
-  padding-top: 5.1282051282vw;
-  padding-bottom: 7.6923076923vw;
+  padding-top: 3.8461538462vw;
+  padding-bottom: 6.4102564103vw;
 }
 @media screen and (min-width: 768px) {
   .qa .lead {
-    padding-top: 2.5vw;
-    padding-bottom: 2.9166666667vw;
+    padding-top: 2.9166666667vw;
+    padding-bottom: 3.3333333333vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .qa .lead {
-    padding-top: 1.875rem;
-    padding-bottom: 2.1875rem;
+    padding-top: 2.1875rem;
+    padding-bottom: 2.5rem;
   }
 }
 
@@ -922,11 +1022,16 @@ h2.lead .leadJa {
 }
 .accordion__question:before {
   background: url(/assets/image/caret-down_sp.png);
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
 }
 @media screen and (min-width: 768px) {
   .accordion__question:before {
     background: url(/assets/image/caret-down.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }
 .accordion__question:after {

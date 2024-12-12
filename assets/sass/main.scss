@@ -185,23 +185,39 @@ h2.lead {
 //  ここから トップへ戻るボタン-
 //-----------------------------------------------------
 
-.to-top {
+#back-to-top {
 	position: fixed;
 	z-index: 100;
 	right: vw(16);
-	bottom: vw(165);
+	bottom: vw(16);
+	visibility: hidden; /* マウスイベントを防ぐため */
+	width: vw(40);
+	height: vw(40);
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
+	text-align: center;
+	opacity: 0; /* 最初は非表示 */
+	background: url(/assets/image/to-top.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 	@include mq() {
-		right: 9%;
-		bottom: vwt(104);
+		right: vwt(16);
+		bottom: vwt(16);
 		width: vwt(40);
 		height: vwt(40);
 	}
 	@include mq(lg) {
-		// right: 10%;
-		bottom: px2Rem(104);
+		right: px2Rem(150);
+		bottom: px2Rem(16);
 		width: px2Rem(40);
 		height: px2Rem(40);
 	}
+}
+#back-to-top.show {
+	visibility: visible; /* クリック可能に */
+	opacity: 1; /* 表示 */
 }
 
 
@@ -210,15 +226,16 @@ h2.lead {
 //-----------------------------------------------------
 
 .main-visual {
-	position: relative;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	max-width: 100%;
 	height: vw(450);
 	margin: 0 auto;
 	margin-bottom: vw(107);
+	padding-top: vw(420);
+	padding-left: vw(22);
 	background: url(/assets/image/main-visual_sp.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -226,6 +243,8 @@ h2.lead {
 	@include mq() {
 		height: vwt(720);
 		margin-bottom: 0;
+		padding-top: vwt(270);
+		padding-left: vwt(180);
 		background: url(/assets/image/main-visual.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
@@ -235,8 +254,9 @@ h2.lead {
 	}
 	@include mq(lg) {
 		height: px2Rem(720);
+		padding-top: px2Rem(270);
+		padding-left: px2Rem(220);
 	}
-
 	&__main-logo {
 		position: absolute;
 		z-index: 1;
@@ -255,22 +275,17 @@ h2.lead {
 		}
 	}
 	&__main-container {
-		position: absolute;
-		bottom: -24%;
-		left: 6%;
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
 		max-width: vw(358);
-		margin: 0 auto;
+		// margin: 0 auto;
 		@include mq() {
-			top: 66%;
-			left: 27%;
-			justify-content: flex-start;
-			transform: translate(-50%, -50%);
+			max-width: vwt(1200);
 		}
 		@include mq(lg) {
+			max-width: px2Rem(1200);
 		}
 	}
 	&__main-title-first {
@@ -293,7 +308,6 @@ h2.lead {
 	}
 	&__main-title-second {
 		text-align: left;
-		// letter-spacing: vw(6);
 		letter-spacing: vw(6);
 		font-size: vw(20);
 		@include mq() {
@@ -309,7 +323,7 @@ h2.lead {
 
 
 //-----------------------------------------------------
-//  ここから ボタンエリア 
+//  ここから CTA
 //-----------------------------------------------------
 
 .cta {
@@ -325,7 +339,7 @@ h2.lead {
 		padding-bottom: px2Rem(48);
 	}
 
-	&__button-container {
+	&__cta-container {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -348,8 +362,7 @@ h2.lead {
 			padding: px2Rem(40) px2Rem(48);
 		}
 	}
-
-	&__button-title-first {
+	&__cta-title {
 		margin-bottom: vw(3);
 		text-align: center;
 		letter-spacing: vw(1.8);
@@ -365,7 +378,7 @@ h2.lead {
 			font-size: px2Rem(24);
 		}
 	}
-	&__button-title-second {
+	&__cta-price {
 		text-align: center;
 		color: #111;
 		font-size: vw(14);
@@ -376,27 +389,28 @@ h2.lead {
 		@include mq(lg) {
 			font-size: px2Rem(16);
 		}
-	}
-	.tax {
-		margin-right: vw(8);
-		@include mq() {
-			margin-right: vwt(13);
-		}
-		@include mq(lg) {
-			margin-right: px2Rem(13);
-		}
-	}
-	&__button-list-group {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		@include mq() {
-			flex-direction: row;
-		}
-		@include mq(lg) {
+		.tax {
+			margin-right: vw(8);
+			@include mq() {
+				margin-right: vwt(13);
+			}
+			@include mq(lg) {
+				margin-right: px2Rem(13);
+			}
 		}
 	}
+}
+.button {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	@include mq() {
+		flex-direction: row;
+	}
+	@include mq(lg) {
+	}
+
 	&__button-link {
 		display: flex;
 		align-items: center;
@@ -421,9 +435,11 @@ h2.lead {
 			height: px2Rem(58);
 			border-radius: px2Rem(29);
 			font-size: px2Rem(18);
+		}* {
+			outline: 1px solid red;
 		}
 	}
-	&__button-shop-btn {
+	&__button-onlineshop {
 		margin-top: vw(20);
 		margin-bottom: vw(20);
 		background-color: #46c4db;
@@ -436,7 +452,7 @@ h2.lead {
 			margin-right: px2Rem(32);
 		}
 	}
-	&__button-buy-btn {
+	&__button-buy {
 		background-color: #5dd5ab;
 	}
 }
@@ -447,7 +463,10 @@ h2.lead {
 //-----------------------------------------------------
 
 .product {
-	position: relative;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	justify-content: flex-start;
 	max-width: 100%;
 	height: vw(680);
 	margin: 0 auto;
@@ -460,6 +479,8 @@ h2.lead {
 	background-size: cover;
 	@include mq() {
 		height: vwt(550);
+		padding-top: vwt(120);
+		padding-right: vwt(240);
 		background: url(/assets/image/pht_product.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
@@ -469,23 +490,26 @@ h2.lead {
 	}
 	@include mq(lg) {
 		height: px2Rem(550);
+		padding-top: px2Rem(120);
+		padding-right: px2Rem(240);
 	}
 
 	&__product-container {
 		display: flex;
-		align-items: center;
+		align-items: space-between;
 		flex-direction: column;
 		justify-content: space-between;
-		width: 100%;
+		max-width: vw(358);
 		margin: 0 auto;
+		padding-right: vw(16);
+		padding-left: vw(16);
 		@include mq() {
-			position: absolute;
-			top: 50%;
-			left: 69.5%;
 			align-items: flex-start;
 			justify-content: flex-start;
 			width: vwt(429);
-			transform: translate(-50%, -50%);
+			margin: 0 ;
+			padding-right: 0;
+			padding-left: 0;
 		}
 		@include mq(lg) {
 			width: px2Rem(429);
@@ -511,12 +535,12 @@ h2.lead {
 		color: #fff;
 		font-size: vw(24);
 		@include mq() {
-			margin-bottom: vwt(10);
+			margin-bottom: vwt(14);
 			text-align: left;
 			font-size: vwt(24);
 		}
 		@include mq(lg) {
-			margin-bottom: px2Rem(10);
+			margin-bottom: px2Rem(14);
 			font-size: px2Rem(24);
 		}
 	}
@@ -556,11 +580,11 @@ h2.lead {
 		justify-content: center;
 		width: 100%;
 		margin: 0 auto;
-		padding: 0 vw(16);
+		padding: vw(18);
 		@include mq() {
 			max-width: vwt(1200);
-			padding: 0 vwt(16);
-			padding-bottom: vwt(20);
+			padding: 0;
+			padding-bottom: vwt(15);
 		}
 		@include mq(lg) {
 			max-width: px2Rem(1200);
@@ -569,40 +593,43 @@ h2.lead {
 	}
 	.lead {
 		padding-top: vw(45);
-		padding-bottom: vw(10);
+		padding-bottom: vw(5);
 		@include mq() {
 			padding-top: vwt(70);
-			padding-bottom: vwt(15);
+			padding-bottom: vwt(35);
 		}
 		@include mq(lg) {
 			padding-top: px2Rem(70);
-			padding-bottom: px2Rem(10);
+			padding-bottom: px2Rem(35);
 		}
 	}
 }
 .visual {
-	max-width: 80%;
+	max-width: 85%;
 	margin: 0 auto;
-	margin-top: vw(30);
+	margin-top: vw(10);
 	margin-bottom: 0;
 	padding: 0;
 	@include mq() {
 		display: flex;
 		align-items: center;
 		flex-direction: row;
-		justify-content: space-between;
-		max-width: 88%;
-		margin-top: vwt(45);
+		justify-content: center;
+		// max-width: vwt(980);
+		margin-top: vwt(5);
 
-		gap: vwt(40);
+		// column-gap: vwt(80);
 	}
 	@include mq(lg) {
-		margin-top: px2Rem(45);
+		// max-width: px2Rem(980);
+		margin-top: px2Rem(5);
 
-		gap: px2Rem(40);
+
+		// column-gap: px2Rem(80);
 	}
 
 	&__voice-card {
+		// position: relative;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -612,20 +639,20 @@ h2.lead {
 		margin: 0 auto;
 		margin-right: vw(10);
 		margin-left: vw(10);
-		padding: vw(35) vw(15) 0 vw(15);
+		padding: vw(35) vw(15) 0 vw(10);
 		background-color: #dbf7f9;
 		@include mq() {
 			width: vwt(300);
 			height: vwt(388);
-			margin-right: vwt(20);
-			margin-left: vwt(20);
+			margin-right: vwt(15);
+			margin-left: vwt(15);
 			padding: vwt(40) vwt(20);
 		}
 		@include mq(lg) {
 			width: px2Rem(300);
 			height: px2Rem(388);
-			margin-right: px2Rem(20);
-			margin-left: px2Rem(20);
+			margin-right: px2Rem(15);
+			margin-left: px2Rem(15);
 			padding: px2Rem(40) px2Rem(20);
 		}
 	}
@@ -637,20 +664,22 @@ h2.lead {
 		width: vw(80);
 		height: vw(80);
 		margin: 0 auto;
-		margin-bottom: vw(30);
+		margin-bottom: vw(35);
+		padding-top: vwt(20);
 		@include mq() {
 			width: vwt(100);
 			height: vwt(100);
-			margin-bottom: vwt(30);
+			margin-bottom: vwt(40);
+			padding-top: vwt(30);
 		}
 		@include mq(lg) {
 			width: px2Rem(100);
 			height: px2Rem(100);
-			margin-bottom: px2Rem(30);
+			margin-bottom: px2Rem(40);
+			padding-top: vwt(30);
 		}
-
 		img {
-			margin-bottom: vw(5);
+			margin-bottom: vw(8);
 			@include mq() {
 				margin-bottom: vwt(8);
 			}
@@ -671,18 +700,117 @@ h2.lead {
 		}
 	}
 	&__voice-detail {
-		width: vw(268);
+		text-align: left;
+		// width: vw(268);
 		font-size: vw(14);
 		line-height: calc(28 / 14);
 		@include mq() {
-			width: vwt(268);
+			// width: vwt(268);
 			font-size: vwt(16);
-			line-height: calc(28 / 16);
+			line-height: calc(28/ 16);
 		}
 		@include mq(lg) {
-			width: px2Rem(268);
+			// width: px2Rem(268);
 			font-size: px2Rem(16);
+			line-height: calc(28/ 16);
 		}
+	}
+}
+
+//-----------------------------------------------------
+//   ここから Slickカスタマイズ
+//-----------------------------------------------------
+
+/* Arrows → jsでスライダーボタン設定したので今回不要に */
+
+// .slick-prev {
+// 	top: 50%;
+// 	left: vw(-145);
+// 	@include mq() {
+// 		left: vwt(-45);
+// 		[dir="rtl"] & {
+// 			right: vwt(-45);
+// 		}
+// 	}
+// 	[dir="rtl"] & {
+// 		right: vw(-145);
+// 	}
+// }
+
+// .slick-next {
+// 	right: vw(-145);
+// 	@include mq() {
+// 		right: vwt(-45);
+// 		[dir="rtl"] & {
+// 			left: vwt(-45);
+// 		}
+// 	}
+// 	[dir="rtl"] & {
+// 		left: vw(-145);
+// 	}
+// }
+
+/* Dots →ここはjsで設定したスライダーボタンに無いので必要 */
+
+.slick-dots {
+	bottom: vw(-22);
+	@include mq() {
+		bottom: vw(-15);
+	};
+	@include mq(lg) {
+		bottom: px2Rem(-35);
+	}
+}
+
+//-----------------------------------------------------
+//   ここから Sliderカスタマイズ
+//-----------------------------------------------------
+
+// .slide-arrow {
+// 	position: absolute;
+// 	top: 0;
+// 	bottom: 0;
+// 	width: 30px;
+// 	margin: auto;
+// 	cursor: pointer;
+// }
+// .prev-arrow {
+// 	left: -20px;
+// }
+// .next-arrow {
+// 	right: -40px;
+// }
+
+.slide-arrow {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: vw(32);
+	margin: auto;
+	cursor: pointer;
+	@include mq() {
+		width: vwt(48);
+	}
+	@include mq(lg) {
+		width: px2Rem(48);
+	}
+}
+.prev-arrow {
+	left: vw(-30);
+	@include mq() {
+		left: vwt(-65);
+	}
+	@include mq(lg) {
+		left: px2Rem(-65);
+	}
+}
+.next-arrow {
+	right: vw(-30);
+	@include mq() {
+		right: vwt(-65);
+	}
+	@include mq(lg) {
+		right: px2Rem(-65);
 	}
 }
 
@@ -713,15 +841,15 @@ h2.lead {
 	}
 
 	.lead {
-		padding-top: vw(20);
-		padding-bottom: vw(30);
+		padding-top: vw(15);
+		padding-bottom: vw(25);
 		@include mq() {
-			padding-top: vwt(30);
-			padding-bottom: vwt(35);
+			padding-top: vwt(35);
+			padding-bottom: vwt(40);
 		}
 		@include mq(lg) {
-			padding-top: px2Rem(30);
-			padding-bottom: px2Rem(35);
+			padding-top: px2Rem(35);
+			padding-bottom: px2Rem(40);
 		}
 	}
 }
@@ -799,9 +927,14 @@ h2.lead {
 	}
 	&__question:before {
 		background: url(/assets/image/caret-down_sp.png);
+		background-repeat: no-repeat;
+		background-position: center;
 		background-size: contain;
 		@include mq() {
 			background: url(/assets/image/caret-down.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
 		}
 	}
 	&__question:after {

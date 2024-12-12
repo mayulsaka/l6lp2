@@ -11,9 +11,12 @@
   <meta property="og:url" content="https://example.com">
   <meta property="og:site_name" content="Kira-meki">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+  <!-- <link rel="stylesheet" href="/assets/css/slick.min.css" media="all"> -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
   <link rel="stylesheet" href="/assets/css/slick-theme.min.css" media="all">
-  <link rel="stylesheet" href="/assets/css/slick.min.css" media="all">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"> -->
   <link rel="stylesheet" href="/assets/css/main.min.css">
 
 
@@ -28,10 +31,11 @@
 
   <!-- ここから トップへ戻る-->
 
-  <a href="#top" class="to-top">
+  <a href="#top" class="to-top" id="back-to-top">
     <!-- <picture>
           <source srcset="/assets/image/to-top.jpg" media="(min-width: 768px)"> -->
-    <img class="to-top__img" src="/assets/image/to-top.jpg" alt="">
+    <!-- <img class="to-top__img" src="/assets/image/to-top.jpg" alt=""> -->
+    <!-- <img class="to-top__img" src="/assets/image/to-top.jpg" alt=""> -->
     <!-- </picture> -->
   </a>
 
@@ -49,17 +53,17 @@
   </section>
 
 
-  <!-- ここから ボタンエリア -->
+  <!-- ここから CTA -->
 
   <section class="cta">
-    <div class="cta__button-container">
-      <div class="cta__button-text-group">
-        <p class="cta__button-title-first">キラメキクリーム</p>
-        <p class="cta__button-title-second"><span class="tax">税込</span>4,000円</p>
+    <div class="cta__cta-container">
+      <div class="cta__cta-product">
+        <p class="cta__cta-title">キラメキクリーム</p>
+        <p class="cta__cta-price"><span class="tax">税込</span>4,000円</p>
       </div>
-      <ul class="cta__button-list-group">
-        <li class="cta__button-item"><a href="#" class="cta__button-link cta__button-shop-btn">オンラインショップへ</a></li>
-        <li class="cta__button-item"><a href="/cart/" class="cta__button-link cta__button-buy-btn">購入する</a></li>
+      <ul class="button">
+        <li class="button__item"><a href="#" class="button__button-link button__button-onlineshop">オンラインショップへ</a></li>
+        <li class="button__item"><a href="/cart/" class="button__button-link button__button-buy">購入する</a></li>
       </ul>
     </div>
   </section>
@@ -78,76 +82,69 @@
 
   <!-- ここから お客様の声-->
 
-
   <section class="voice">
     <h2 class="lead">
       <span class="leadEn eb-garamond">Voices</span>
       <span class="leadJa">お客様の声</span>
+
     </h2>
     <div class="voice__voice-container">
 
       <div class="visual">
-
         <div class="visual__voice-card">
           <figure class="visual__voice-figure">
-            <img src="/assets/image/pht_voice01.png" class="voice__voice_01" alt="">
-            <figcaption class="voice__voice-figcaption">Aさん</figcaption>
+            <img src="/assets/image/pht_voice01.png" class="visual__voice_01" alt="">
+            <figcaption class="visual__voice-figcaption">Aさん</figcaption>
           </figure>
-          <p class="voice__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
+          <p class="visual__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。</p>
         </div>
-
         <div class="visual__voice-card">
           <figure class="visual__voice-figure">
-            <img src="/assets/image/pht_voice02.png" class="voice__voice_02" alt="">
-            <figcaption class="voice__voice-figcaption">Bさん</figcaption>
+            <img src="/assets/image/pht_voice02.png" class="visual__voice_02" alt="">
+            <figcaption class="visual__voice-figcaption">Bさん</figcaption>
           </figure>
-          <p class="voice__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
+          <p class="visual__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。</p>
         </div>
-
         <div class="visual__voice-card">
           <figure class="visual__voice-figure">
-            <img src="/assets/image/pht_voice03.png" class="voice__voice_03" alt="">
-            <figcaption class="voice__voice-figcaption">Cさん</figcaption>
+            <img src="/assets/image/pht_voice03.png" class="visual__voice_03" alt="">
+            <figcaption class="visual__voice-figcaption">Cさん</figcaption>
           </figure>
-          <p class="voice__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
+          <p class="visual__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。</p>
         </div>
-
         <div class="visual__voice-card">
           <figure class="visual__voice-figure">
-            <img src="/assets/image/pht_voice01.png" class="voice__voice_01" alt="">
-            <figcaption class="voice__voice-figcaption">Aさん</figcaption>
+            <img src="/assets/image/pht_voice01.png" class="visual__voice_01" alt="">
+            <figcaption class="visual__voice-figcaption">Aさん</figcaption>
           </figure>
-          <p class="voice__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
+          <p class="visual__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。</p>
         </div>
-
         <div class="visual__voice-card">
           <figure class="visual__voice-figure">
-            <img src="/assets/image/pht_voice02.png" class="voice__voice_02" alt="">
-            <figcaption class="voice__voice-figcaption">Bさん</figcaption>
+            <img src="/assets/image/pht_voice02.png" class="visual__voice_02" alt="">
+            <figcaption class="visual__voice-figcaption">Bさん</figcaption>
           </figure>
-          <p class="voice__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
+          <p class="visual__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。</p>
         </div>
-
         <div class="visual__voice-card">
           <figure class="visual__voice-figure">
-            <img src="/assets/image/pht_voice03.png" class="voice__voice_03" alt="">
-            <figcaption class="voice__voice-figcaption">Cさん</figcaption>
+            <img src="/assets/image/pht_voice03.png" class="visual__voice_03" alt="">
+            <figcaption class="visual__voice-figcaption">Cさん</figcaption>
           </figure>
-          <p class="voice__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
+          <p class="visual__voice-detail">ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
             ここにテキストが入ります。ここにテキストが入ります。</p>
         </div>
-
       </div>
 
     </div>
@@ -158,7 +155,7 @@
 
   <section class="qa">
     <h2 class="lead">
-      <span class="leadEn eb-garamond">Q&A.</span>
+      <span class="leadEn eb-garamond">Q&A</span>
       <span class="leadJa">よくあるご質問</span>
     </h2>
     <div class="accordion">
@@ -212,17 +209,17 @@
   </section>
 
 
-  <!-- ここから ボタンエリア -->
+  <!-- ここから CTA-->
 
   <section class="cta">
-    <div class="cta__button-container">
-      <div class="cta__button-text-group">
-        <p class="cta__button-title-first">キラメキクリーム</p>
-        <p class="cta__button-title-second"><span class="tax">税込</span>4,000円</p>
+    <div class="cta__cta-container">
+      <div class="cta__cta-product">
+        <p class="cta__cta-title">キラメキクリーム</p>
+        <p class="cta__cta-price"><span class="tax">税込</span>4,000円</p>
       </div>
-      <ul class="cta__button-list-group">
-        <li class="cta__button-item"><a href="#" class="cta__button-link cta__button-shop-btn">オンラインショップへ</a></li>
-        <li class="cta__button-item"><a href="/cart/" class="cta__button-link cta__button-buy-btn">購入する</a></li>
+      <ul class="button">
+        <li class="button__item"><a href="#" class="button__button-link button__button-onlineshop">オンラインショップへ</a></li>
+        <li class="button__item"><a href="/cart/" class="button__button-link button__button-buy">購入する</a></li>
       </ul>
     </div>
   </section>
@@ -248,11 +245,12 @@
 
 
   <!-- ここから jsファイル読み込み -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script> -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="/assets/script/slick.min.js"></script>
-  <script src="/assets/script/script.js"></script>
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> -->
+  <!-- <script src="/assets/script/script.js"></script> -->
+  <script type="text/javascript" src="/assets/script/main.js"></script>
 
 
 </body>
