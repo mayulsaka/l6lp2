@@ -46,3 +46,24 @@
         window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズスクロールで上に戻る
     });
 });
+
+//-----------------------------------------------------
+//  ここから TOPへ戻るボタン 加工テスト
+//-----------------------------------------------------
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const to-topButton = document.getElementById('to-top');
+//   const scrollThreshold = 200; // ボタンを表示するスクロール量
+
+//   window.addEventListener('scroll', () => {
+//       if (window.scrollY > scrollThreshold) {
+//           to-topButton.classList.add('show'); // フェードイン
+//       } else {
+//           to-topButton.classList.remove('show'); // フェードアウト
+//       }
+//   });
+
+//   to-topButton.addEventListener('click', () => {
+//       window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズスクロールで上に戻る
+//   });
+// });

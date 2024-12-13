@@ -185,34 +185,82 @@ h2.lead {
 //  ここから トップへ戻るボタン-
 //-----------------------------------------------------
 
+// .to-top {
+// 	position: sticky;
+// 	bottom: vw(16);
+// 	left: 0;
+// 	display: flex;
+// 	justify-content: flex-end;
+// 	width: vw(40);
+// 	height: vw(40);
+// 	padding-right: vw(16);
+// 	// cursor: pointer;
+// 	// transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
+// 	// opacity: 0; /* 最初は非表示 */
+// 	// background: url(/assets/image/to-top.jpg);
+// 	// background-repeat: no-repeat;
+// 	// background-position: center;
+// 	// background-size: contain;
+// 	@include mq() {
+// 		right: vwt(16);
+// 		bottom: vwt(16);
+// 		width: vwt(40);
+// 		height: vwt(40);
+// 	}
+// 	@include mq(lg) {
+// 		right: px2Rem(150);
+// 		bottom: px2Rem(16);
+// 		width: px2Rem(40);
+// 		height: px2Rem(40);
+// 	}
+// }
+// .to-top.show {
+// 	visibility: visible; /* クリック可能に */
+// 	opacity: 1; /* 表示 */
+// }
+
 #back-to-top {
-	position: fixed;
+	position: sticky;
+	// position: fixed;
 	z-index: 100;
-	right: vw(16);
+	right: 0;
 	bottom: vw(16);
+	// display: flex;
 	visibility: hidden; /* マウスイベントを防ぐため */
-	width: vw(40);
-	height: vw(40);
-	padding: 10px 20px;
+	// justify-content: flex-end;
+	width: vw(32);
+	height: vw(32);
+	// padding: 10px 20px;
+	// right: vw(16);
+	padding-left: vw(374);
 	cursor: pointer;
 	transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
 	text-align: center;
 	opacity: 0; /* 最初は非表示 */
-	background: url(/assets/image/to-top.jpg);
+	background: url(/assets/image/to-top_sp.jpg);
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: right bottom;
 	background-size: contain;
 	@include mq() {
-		right: vwt(16);
+		// right: vwt(16);
 		bottom: vwt(16);
 		width: vwt(40);
 		height: vwt(40);
+		// padding-right: vwt(16);
+		padding-left: calc(100% - 16px);
+		background: url(/assets/image/to-top.jpg);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-size: contain;
 	}
 	@include mq(lg) {
-		right: px2Rem(150);
+		// right: px2Rem(190);
 		bottom: px2Rem(16);
 		width: px2Rem(40);
 		height: px2Rem(40);
+		// padding-right: px2Rem(16);
+		// padding-left: px2Rem(1484);
+		// padding-left: 90%;
 	}
 }
 #back-to-top.show {
@@ -234,8 +282,8 @@ h2.lead {
 	height: vw(450);
 	margin: 0 auto;
 	margin-bottom: vw(107);
-	padding-top: vw(420);
 	padding-left: vw(22);
+	padding-left: vw(-400);
 	background: url(/assets/image/main-visual_sp.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -501,15 +549,11 @@ h2.lead {
 		justify-content: space-between;
 		max-width: vw(358);
 		margin: 0 auto;
-		padding-right: vw(16);
-		padding-left: vw(16);
 		@include mq() {
 			align-items: flex-start;
 			justify-content: flex-start;
 			width: vwt(429);
 			margin: 0 ;
-			padding-right: 0;
-			padding-left: 0;
 		}
 		@include mq(lg) {
 			width: px2Rem(429);
@@ -568,10 +612,10 @@ h2.lead {
 	margin: 0 auto;
 	padding-bottom: vw(45);
 	@include mq() {
-		padding-bottom: vwt(50);
+		padding-bottom: vwt(55);
 	}
 	@include mq(lg) {
-		padding-bottom: px2Rem(50);
+		padding-bottom: px2Rem(55);
 	}
 
 	&__voice-container {
@@ -614,7 +658,7 @@ h2.lead {
 		display: flex;
 		align-items: center;
 		flex-direction: row;
-		justify-content: center;
+		justify-content: space-between;
 		// max-width: vwt(980);
 		margin-top: vwt(5);
 
@@ -636,10 +680,10 @@ h2.lead {
 		justify-content: space-between;
 		width: vw(280);
 		height: vw(344);
-		margin: 0 auto;
+		// margin: 0 auto;
 		margin-right: vw(10);
 		margin-left: vw(10);
-		padding: vw(35) vw(15) 0 vw(10);
+		padding: vw(35) vw(15) vw(25) vw(10);
 		background-color: #dbf7f9;
 		@include mq() {
 			width: vwt(300);
@@ -736,7 +780,6 @@ h2.lead {
 // 		right: vw(-145);
 // 	}
 // }
-
 // .slick-next {
 // 	right: vw(-145);
 // 	@include mq() {
@@ -750,15 +793,94 @@ h2.lead {
 // 	}
 // }
 
-/* Dots →ここはjsで設定したスライダーボタンに無いので必要 */
+/* Dots →ここからはjsで設定したスライダーボタンに無いので必要 */
+
+$slick-dot-color: #00afbf !default;
+$slick-dot-color-active: #00afbf  !default;
+// $slick-prev-character: "\2190" !default;
+// $slick-next-character: "\2192" !default;
+// $slick-dot-character: "\2022" !default;
+$slick-dot-size: 35px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+// .slick-dotted.slick-slider {
+// 	margin-bottom: 30px;
+// }
 
 .slick-dots {
+	// position: absolute;
+	// bottom: -25px;
 	bottom: vw(-22);
+	// display: block;
+	// width: 100%;
+	// margin: 0;
+	// padding: 0;
+	// list-style: none;
+	// text-align: center;
 	@include mq() {
 		bottom: vw(-15);
 	};
 	@include mq(lg) {
 		bottom: px2Rem(-35);
+	}
+	li {
+		// position: relative;
+		// display: inline-block;
+		// width: 20px;
+		// height: 20px;
+		// margin: 0 5px;
+		// padding: 0;
+		// cursor: pointer;
+		button {
+			// display: block;
+			// width: 20px;
+			// height: 20px;
+			width: 40px;
+			height: 40px;
+			// padding: 5px;
+			padding: 10px;
+			// cursor: pointer;
+			// color: transparent;
+			// border: 0;
+			// outline: none;
+			// background: transparent;
+			// font-size: 0;
+			// line-height: 0;
+			// &:hover, &:focus {
+			// 	outline: none;
+			// 	&:before {
+			// 		opacity: $slick-opacity-on-hover;
+			// 	}
+			// }
+			&:before {
+				// position: absolute;
+				// top: 0;
+				// left: 0;
+				// width: 20px;
+				// height: 20px;
+				width: 40px;
+				height: 40px;
+				// content: $slick-dot-character;
+				// text-align: center;
+				// opacity: $slick-opacity-not-active;
+				// color: $slick-dot-color;
+				// color: #00afbf;
+				color: #00afbf;
+				// font-family: $slick-font-family;
+				// font-size: $slick-dot-size;
+				// line-height: 20px;
+
+				// -webkit-font-smoothing: antialiased;
+				// -moz-osx-font-smoothing: grayscale;;
+				;
+			}
+		}
+		&.slick-active button:before {
+			opacity: $slick-opacity-default;
+			color: $slick-dot-color-active;
+		}
 	}
 }
 
@@ -1000,13 +1122,16 @@ h2.lead {
 	width: 100%;
 	height: vw(165);
 	margin: 0 auto;
+	// margin-top: vw(-32);
 	padding: 0;
 	background-color: #0071ce;
 	@include mq() {
 		height: vwt(104);
+		// margin-top: vwt(-40);
 	}
 	@include mq(lg) {
 		height: px2Rem(104);
+		// margin-top: vwt(-40);
 	}
 
 	&__footer-container {
