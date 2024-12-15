@@ -89,6 +89,7 @@ $breakpoints: (
 body {
 	box-sizing: border-box;
 	color: #000;
+	// background-color: #fff;
 	font-family: "Noto Serif JP", serif;
 	font-size: vw(16);
 	font-weight: 400;
@@ -182,158 +183,72 @@ h2.lead {
 
 
 //-----------------------------------------------------
-//  ここから トップへ戻るボタン-
-//-----------------------------------------------------
-
-// .to-top {
-// 	position: sticky;
-// 	bottom: vw(16);
-// 	left: 0;
-// 	display: flex;
-// 	justify-content: flex-end;
-// 	width: vw(40);
-// 	height: vw(40);
-// 	padding-right: vw(16);
-// 	// cursor: pointer;
-// 	// transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
-// 	// opacity: 0; /* 最初は非表示 */
-// 	// background: url(/assets/image/to-top.jpg);
-// 	// background-repeat: no-repeat;
-// 	// background-position: center;
-// 	// background-size: contain;
-// 	@include mq() {
-// 		right: vwt(16);
-// 		bottom: vwt(16);
-// 		width: vwt(40);
-// 		height: vwt(40);
-// 	}
-// 	@include mq(lg) {
-// 		right: px2Rem(150);
-// 		bottom: px2Rem(16);
-// 		width: px2Rem(40);
-// 		height: px2Rem(40);
-// 	}
-// }
-// .to-top.show {
-// 	visibility: visible; /* クリック可能に */
-// 	opacity: 1; /* 表示 */
-// }
-
-#back-to-top {
-	position: sticky;
-	// position: fixed;
-	z-index: 100;
-	right: 0;
-	bottom: vw(16);
-	// display: flex;
-	visibility: hidden; /* マウスイベントを防ぐため */
-	// justify-content: flex-end;
-	width: vw(32);
-	height: vw(32);
-	// padding: 10px 20px;
-	// right: vw(16);
-	padding-left: vw(374);
-	cursor: pointer;
-	transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
-	text-align: center;
-	opacity: 0; /* 最初は非表示 */
-	background: url(/assets/image/to-top_sp.jpg);
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	background-size: contain;
-	@include mq() {
-		// right: vwt(16);
-		bottom: vwt(16);
-		width: vwt(40);
-		height: vwt(40);
-		// padding-right: vwt(16);
-		padding-left: calc(100% - 16px);
-		background: url(/assets/image/to-top.jpg);
-		background-repeat: no-repeat;
-		background-position: right bottom;
-		background-size: contain;
-	}
-	@include mq(lg) {
-		// right: px2Rem(190);
-		bottom: px2Rem(16);
-		width: px2Rem(40);
-		height: px2Rem(40);
-		// padding-right: px2Rem(16);
-		// padding-left: px2Rem(1484);
-		// padding-left: 90%;
-	}
-}
-#back-to-top.show {
-	visibility: visible; /* クリック可能に */
-	opacity: 1; /* 表示 */
-}
-
-
-//-----------------------------------------------------
 //  ここから メインビジュアル
 //-----------------------------------------------------
 
 .main-visual {
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	justify-content: flex-start;
 	max-width: 100%;
-	height: vw(450);
 	margin: 0 auto;
-	margin-bottom: vw(107);
-	padding-left: vw(22);
-	padding-left: vw(-400);
+	margin-bottom: vw(110);
+	padding: vw(30) vw(20) vw(400) vw(25);
 	background: url(/assets/image/main-visual_sp.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	@include mq() {
-		height: vwt(720);
 		margin-bottom: 0;
-		padding-top: vwt(270);
-		padding-left: vwt(180);
+		padding: vwt(40) vwt(20) vwt(380) vwt(20);
 		background: url(/assets/image/main-visual.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
 
-		object-fit: contain;
+		// object-fit: contain;
 	}
 	@include mq(lg) {
-		height: px2Rem(720);
-		padding-top: px2Rem(270);
-		padding-left: px2Rem(220);
+		padding: px2Rem(40) px2Rem(20) px2Rem(270) px2Rem(20);
 	}
 	&__main-logo {
-		position: absolute;
-		z-index: 1;
-		top: vw(29);
-		left: 50%;
-		width: vw(139);
+		width: vw(135);
 		margin: 0 auto;
-		transform: translateX(-50%);
 		@include mq() {
-			top: vwt(40);
 			width: vwt(162);
 		}
 		@include mq(lg) {
-			top: px2Rem(40);
 			width: px2Rem(162);
 		}
 	}
 	&__main-container {
+		position: relative;
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
-		justify-content: flex-start;
-		max-width: vw(358);
-		// margin: 0 auto;
+		justify-content: flex-end;
+		width: vw(375);
+		max-width: 100%;
 		@include mq() {
+			justify-content: flex-start;
 			max-width: vwt(1200);
+			padding-top: vwt(210);
+			padding-left: vwt(72);
 		}
 		@include mq(lg) {
 			max-width: px2Rem(1200);
+			padding-top: px2Rem(210);
+			padding-left: px2Rem(72);
+		}
+
+		margin-inline: auto;
+	}
+	&__main-info {
+		position: absolute;
+		top: vw(372);
+		@include mq() {
+			position: initial;
+			// position: static;
+		}
+		@include mq(lg) {
+			// 		top: px2rem(-372);
 		}
 	}
 	&__main-title-first {
@@ -343,13 +258,13 @@ h2.lead {
 		font-size: vw(41);
 		line-height: calc(51 / 41);
 		@include mq() {
-			margin-bottom: vwt(8);
+			margin-bottom: vwt(6);
 			letter-spacing: vwt(14);
 			font-size: vwt(50);
 			line-height: calc(68 / 50);
 		}
 		@include mq(lg) {
-			margin-bottom: px2Rem(8);
+			margin-bottom: px2Rem(6);
 			letter-spacing: px2Rem(14);
 			font-size: px2Rem(50);
 		}
@@ -379,12 +294,12 @@ h2.lead {
 	margin: 0 auto;
 	padding: vw(50) vw(16) vw(50) vw(16) ;
 	@include mq() {
-		padding-top: vwt(48);
-		padding-bottom: vwt(48);
+		padding-top: vwt(46);
+		padding-bottom: vwt(46);
 	}
 	@include mq(lg) {
-		padding-top: px2Rem(48);
-		padding-bottom: px2Rem(48);
+		padding-top: px2Rem(46);
+		padding-bottom: px2Rem(46);
 	}
 
 	&__cta-container {
@@ -417,33 +332,37 @@ h2.lead {
 		color: #111;
 		font-size: vw(18);
 		@include mq() {
-			margin-bottom: 0;
+			margin-bottom: vwt(3);
 			letter-spacing: vwt(2.4);
 			font-size: vwt(24);
 		}
 		@include mq(lg) {
+			margin-bottom: px2Rem(3);
 			letter-spacing: px2Rem(2.4);
 			font-size: px2Rem(24);
 		}
 	}
 	&__cta-price {
 		text-align: center;
+		letter-spacing: vw(1.5);
 		color: #111;
 		font-size: vw(14);
 		@include mq() {
 			text-align: left;
+			letter-spacing: vwt(1.5);
 			font-size: vwt(16);
 		}
 		@include mq(lg) {
+			letter-spacing: px2Rem(1.5);
 			font-size: px2Rem(16);
 		}
 		.tax {
 			margin-right: vw(8);
 			@include mq() {
-				margin-right: vwt(13);
+				margin-right: vwt(8);
 			}
 			@include mq(lg) {
-				margin-right: px2Rem(13);
+				margin-right: px2Rem(8);
 			}
 		}
 	}
@@ -456,9 +375,6 @@ h2.lead {
 	@include mq() {
 		flex-direction: row;
 	}
-	@include mq(lg) {
-	}
-
 	&__button-link {
 		display: flex;
 		align-items: center;
@@ -483,8 +399,6 @@ h2.lead {
 			height: px2Rem(58);
 			border-radius: px2Rem(29);
 			font-size: px2Rem(18);
-		}* {
-			outline: 1px solid red;
 		}
 	}
 	&__button-onlineshop {
@@ -511,52 +425,48 @@ h2.lead {
 //-----------------------------------------------------
 
 .product {
-	display: flex;
-	align-items: flex-end;
-	flex-direction: column;
-	justify-content: flex-start;
 	max-width: 100%;
-	height: vw(680);
 	margin: 0 auto;
-	padding-top: vw(40);
-	padding-right: vw(16);
-	padding-left: vw(16);
+	padding: vw(45) vw(18) vw(310) vw(18);
 	background: url(/assets/image/pht_product_sp.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	@include mq() {
-		height: vwt(550);
-		padding-top: vwt(120);
-		padding-right: vwt(240);
+		padding: vwt(58) vwt(20) vwt(95) vwt(20);
 		background: url(/assets/image/pht_product.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
 
-		object-fit: contain;
+		// object-fit: contain;
 	}
 	@include mq(lg) {
-		height: px2Rem(550);
-		padding-top: px2Rem(120);
-		padding-right: px2Rem(240);
+		padding: px2rem(58) px2rem(20) px2rem(95) px2rem(20);
 	}
-
 	&__product-container {
 		display: flex;
-		align-items: space-between;
+		align-items: center;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
+		width: 100%;
 		max-width: vw(358);
 		margin: 0 auto;
 		@include mq() {
+			display: flex;
 			align-items: flex-start;
-			justify-content: flex-start;
-			width: vwt(429);
-			margin: 0 ;
+			flex-direction: column;
+			justify-content: flex-end;
+			max-width: vwt(1200);
+			padding-top: vwt(50);
+			padding-left: vwt(680);
+
+			margin-inine: auto ;
 		}
 		@include mq(lg) {
-			width: px2Rem(429);
+			max-width: px2Rem(1200);
+			padding-top: px2Rem(50);
+			padding-left: px2Rem(680);
 		}
 	}
 	&__product-title-first {
@@ -567,14 +477,14 @@ h2.lead {
 		@include mq() {
 			margin-bottom: 0;
 			text-align: left;
-			font-size: vwt(38);
+			font-size: vwt(39);
 		}
 		@include mq(lg) {
-			font-size: px2Rem(38);
+			font-size: px2Rem(39);
 		}
 	}
 	&__product-title-second {
-		margin-bottom: vw(16);
+		margin-bottom: vw(10);
 		text-align: center;
 		color: #fff;
 		font-size: vw(24);
@@ -589,14 +499,17 @@ h2.lead {
 		}
 	}
 	&__product-title-detail {
-		text-align: left;
+		width: 100%;
+		text-align: justify;
 		color: #fff;
-		font-size: vw(14);
-		line-height: calc(32 / 14);
+		font-size: vw(13.5);
+		line-height: calc(32 / 13.5);
 		@include mq() {
+			max-width: vwt(429);
 			font-size: vwt(14);
 		}
 		@include mq(lg) {
+			max-width: px2Rem(429);
 			font-size: px2Rem(14);
 		}
 	}
@@ -610,14 +523,13 @@ h2.lead {
 .voice {
 	max-width: 100%;
 	margin: 0 auto;
-	padding-bottom: vw(45);
+	padding-bottom: vw(30);
 	@include mq() {
-		padding-bottom: vwt(55);
+		padding-bottom: vwt(60);
 	}
 	@include mq(lg) {
-		padding-bottom: px2Rem(55);
+		padding-bottom: px2Rem(60);
 	}
-
 	&__voice-container {
 		display: flex;
 		align-items: center;
@@ -627,8 +539,7 @@ h2.lead {
 		padding: vw(18);
 		@include mq() {
 			max-width: vwt(1200);
-			padding: 0;
-			padding-bottom: vwt(15);
+			padding: vwt(15);
 		}
 		@include mq(lg) {
 			max-width: px2Rem(1200);
@@ -636,15 +547,15 @@ h2.lead {
 		}
 	}
 	.lead {
-		padding-top: vw(45);
-		padding-bottom: vw(5);
+		padding-top: vw(46);
+		padding-bottom: vw(6);
 		@include mq() {
 			padding-top: vwt(70);
-			padding-bottom: vwt(35);
+			padding-bottom: vwt(15);
 		}
 		@include mq(lg) {
 			padding-top: px2Rem(70);
-			padding-bottom: px2Rem(35);
+			padding-bottom: px2Rem(15);
 		}
 	}
 }
@@ -659,30 +570,23 @@ h2.lead {
 		align-items: center;
 		flex-direction: row;
 		justify-content: space-between;
-		// max-width: vwt(980);
+		// max-width: vwt(1020);
+		max-width: 88%;
 		margin-top: vwt(5);
-
-		// column-gap: vwt(80);
 	}
 	@include mq(lg) {
-		// max-width: px2Rem(980);
+		// max-width: px2Rem(1020);
 		margin-top: px2Rem(5);
-
-
-		// column-gap: px2Rem(80);
 	}
-
 	&__voice-card {
-		// position: relative;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		justify-content: space-between;
 		width: vw(280);
 		height: vw(344);
-		// margin: 0 auto;
-		margin-right: vw(10);
-		margin-left: vw(10);
+		margin-right: vw(15);
+		margin-left: vw(15);
 		padding: vw(35) vw(15) vw(25) vw(10);
 		background-color: #dbf7f9;
 		@include mq() {
@@ -745,137 +649,48 @@ h2.lead {
 	}
 	&__voice-detail {
 		text-align: left;
-		// width: vw(268);
 		font-size: vw(14);
 		line-height: calc(28 / 14);
 		@include mq() {
-			// width: vwt(268);
 			font-size: vwt(16);
 			line-height: calc(28/ 16);
 		}
 		@include mq(lg) {
-			// width: px2Rem(268);
 			font-size: px2Rem(16);
 			line-height: calc(28/ 16);
 		}
 	}
 }
 
+
 //-----------------------------------------------------
-//   ここから Slickカスタマイズ
+//   ここから スライダーボタンのカスタマイズ
 //-----------------------------------------------------
-
-/* Arrows → jsでスライダーボタン設定したので今回不要に */
-
-// .slick-prev {
-// 	top: 50%;
-// 	left: vw(-145);
-// 	@include mq() {
-// 		left: vwt(-45);
-// 		[dir="rtl"] & {
-// 			right: vwt(-45);
-// 		}
-// 	}
-// 	[dir="rtl"] & {
-// 		right: vw(-145);
-// 	}
-// }
-// .slick-next {
-// 	right: vw(-145);
-// 	@include mq() {
-// 		right: vwt(-45);
-// 		[dir="rtl"] & {
-// 			left: vwt(-45);
-// 		}
-// 	}
-// 	[dir="rtl"] & {
-// 		left: vw(-145);
-// 	}
-// }
-
-/* Dots →ここからはjsで設定したスライダーボタンに無いので必要 */
 
 $slick-dot-color: #00afbf !default;
 $slick-dot-color-active: #00afbf  !default;
-// $slick-prev-character: "\2190" !default;
-// $slick-next-character: "\2192" !default;
-// $slick-dot-character: "\2022" !default;
 $slick-dot-size: 35px !default;
+$slick-dot-size: 40px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
 
-// .slick-dotted.slick-slider {
-// 	margin-bottom: 30px;
-// }
-
 .slick-dots {
-	// position: absolute;
-	// bottom: -25px;
-	bottom: vw(-22);
-	// display: block;
-	// width: 100%;
-	// margin: 0;
-	// padding: 0;
-	// list-style: none;
-	// text-align: center;
+	bottom: vw(-30);
 	@include mq() {
 		bottom: vw(-15);
 	};
 	@include mq(lg) {
-		bottom: px2Rem(-35);
+		bottom: px2Rem(-36);
 	}
 	li {
-		// position: relative;
-		// display: inline-block;
-		// width: 20px;
-		// height: 20px;
-		// margin: 0 5px;
-		// padding: 0;
-		// cursor: pointer;
-		button {
-			// display: block;
-			// width: 20px;
-			// height: 20px;
-			width: 40px;
-			height: 40px;
-			// padding: 5px;
-			padding: 10px;
-			// cursor: pointer;
-			// color: transparent;
-			// border: 0;
-			// outline: none;
-			// background: transparent;
-			// font-size: 0;
-			// line-height: 0;
-			// &:hover, &:focus {
-			// 	outline: none;
-			// 	&:before {
-			// 		opacity: $slick-opacity-on-hover;
-			// 	}
-			// }
-			&:before {
-				// position: absolute;
-				// top: 0;
-				// left: 0;
-				// width: 20px;
-				// height: 20px;
-				width: 40px;
-				height: 40px;
-				// content: $slick-dot-character;
-				// text-align: center;
-				// opacity: $slick-opacity-not-active;
-				// color: $slick-dot-color;
-				// color: #00afbf;
-				color: #00afbf;
-				// font-family: $slick-font-family;
-				// font-size: $slick-dot-size;
-				// line-height: 20px;
-
-				// -webkit-font-smoothing: antialiased;
-				// -moz-osx-font-smoothing: grayscale;;
-				;
-			}
+		width: vw(14);
+		margin: 0 2px;
+		@include mq() {
+			width: vwt(14);
+		};
+		@include mq(lg) {
+			width: px2Rem(14);
 		}
 		&.slick-active button:before {
 			opacity: $slick-opacity-default;
@@ -884,24 +699,25 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
+.slick-dots li button:before {
+	text-align: center;
+	opacity: 1;
+	color: #eee ;
+	font-size: vw(10);
+	@include mq() {
+		font-size: vwt(10);
+	};
+	@include mq(lg) {
+		font-size: px2Rem(10);
+	}
+}
+.slick-dots li.slick-active button:before {
+	color: #00afbf ;
+}
+
 //-----------------------------------------------------
 //   ここから Sliderカスタマイズ
 //-----------------------------------------------------
-
-// .slide-arrow {
-// 	position: absolute;
-// 	top: 0;
-// 	bottom: 0;
-// 	width: 30px;
-// 	margin: auto;
-// 	cursor: pointer;
-// }
-// .prev-arrow {
-// 	left: -20px;
-// }
-// .next-arrow {
-// 	right: -40px;
-// }
 
 .slide-arrow {
 	position: absolute;
@@ -945,32 +761,32 @@ $slick-opacity-not-active: 0.25 !default;
 	position: relative;
 	margin: 0 auto;
 	padding-right: vw(16);
-	padding-bottom: vw(45);
+	padding-bottom: vw(15);
 	padding-left: vw(16);
 	background-image: linear-gradient(to right, #f4ffe8, #c6f0fe);
 	@include mq() {
 		margin: 0 auto;
 		padding-top: vwt(5);
 		padding-right: vwt(40);
-		padding-bottom: vwt(55);
+		padding-bottom: vwt(25);
 		padding-left: vwt(40);
 	}
 	@include mq(lg) {
 		padding-top: px2Rem(5);
 		padding-right: px2Rem(40);
-		padding-bottom: px2Rem(55);
+		padding-bottom: px2Rem(20);
 		padding-left: px2Rem(40);
 	}
 
 	.lead {
-		padding-top: vw(15);
-		padding-bottom: vw(25);
+		padding-top: vw(24);
+		padding-bottom: vw(35);
 		@include mq() {
-			padding-top: vwt(35);
+			padding-top: vwt(30);
 			padding-bottom: vwt(40);
 		}
 		@include mq(lg) {
-			padding-top: px2Rem(35);
+			padding-top: px2Rem(30);
 			padding-bottom: px2Rem(40);
 		}
 	}
@@ -989,7 +805,7 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 	&__faq {
 		position: relative;
-		margin-bottom: 1rem;
+		margin-bottom: 1.2rem;
 	}
 	&__question, &__answer {
 		transition: all 0.3s;
@@ -998,51 +814,58 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 	&__question {
 		display: block;
-		height: vw(89);
-		padding: 1rem 2.2rem 0.5rem 1rem;
-		padding-left: 2.5em;
+		height: vw(88);
+		padding: vw(19) vw(22) vw(19) vw(22);
+		padding-left: 2.6em;
 		text-indent: -1.5em;
 		color: #444;
 		font-size: vw(15);
+		font-weight: 500;
 		@include mq() {
-			height: vwt(71);
-			font-size: vwt(16);
+			height: vwt(76);
+			padding: vwt(16) vwt(40) vwt(16) vwt(50);
+			padding-left: 2.7em;
+			text-indent: -1.7em;
+			font-size: vwt(15);
 		}
 		@include mq(lg) {
-			height: px2Rem(71);
-			font-size: px2Rem(16);
+			height: px2Rem(76);
+			padding: px2Rem(16) px2Rem(40) px2Rem(16) px2Rem(50);
+			font-size: px2Rem(15);
 		}
 	}
 	&__question span, &__answer span {
-		padding-right: vw(12);
-		font-size: vw(15);
+		padding-right: vw(15);
+		font-size: vw(16);
+		font-weight: 600;
 		line-height: 0;
 		@include mq() {
 			padding-right: vw(16);
-			font-size: vwt(16);
+			font-size: vwt(18);
 		}
 		@include mq(lg) {
 			padding-right: px2Rem(16);
-			font-size: px2Rem(16);
+			font-size: px2Rem(18);
 		}
 	}
 	&__question:after, &__question:before {
 		position: absolute;
-		top: vw(0);
-		right: vw(20);
-		bottom: vw(0);
+		top: vw(26);
+		right: vw(18);
 		width: vw(10);
 		height: vw(6.5);
 		margin: auto;
 		content: "";
 		transition: all 0.3s;
 		@include mq() {
-			right: vwt(20);
+			top: vwt(30);
+			right: vwt(24);
 			width: vwt(12);
 			height: vwt(7.5);
 		}
 		@include mq(lg) {
-			right: px2Rem(20);
+			top: px2Rem(30);
+			right: px2Rem(24);
 			width: px2Rem(12);
 			height: px2Rem(7.5);
 		}
@@ -1067,9 +890,16 @@ $slick-opacity-not-active: 0.25 !default;
 		max-height: 0;
 	}
 	&__answer div {
+		width: 100%;
 		margin: 0;
-		padding: 0 1rem 1rem 1rem ;
-		line-height: calc(28 / 15);
+		padding: vw(16);
+		line-height: calc(28 / 16);
+		@include mq() {
+			padding: vwt(16);
+		}
+		@include mq(lg) {
+			padding: px2Rem(16);
+		}
 	}
 	&__toggle:checked + &__question + &__answer {
 		max-height: vw(500);
@@ -1085,14 +915,26 @@ $slick-opacity-not-active: 0.25 !default;
 		transform: rotate(180deg) !important;
 	}
 	.indent {
-		margin-left: 1.5em;
-		padding-left: 1.2em;
-		text-indent: -1.5em;
+		width: vw(340);
+		margin-left: 1.2em;
+		padding-top: 0;
+		padding-bottom: vw(40);
+		padding-left: 1.4em;
+		text-align: justify;
+		text-indent: -1.4em;
 		font-size: vw(15);
+		font-weight: 500;
 		@include mq() {
+			width: vwt(555);
+			margin-left: 1.7em;
+			padding-bottom: vwt(20);
+			padding-left: 1.9em;
+			text-indent: -1.9em;
 			font-size: vwt(15);
 		}
 		@include mq(lg) {
+			width: px2Rem(555);
+			padding-bottom: px2Rem(20);
 			font-size: px2Rem(15);
 		}
 	}
@@ -1112,6 +954,50 @@ $slick-opacity-not-active: 0.25 !default;
 
 
 //-----------------------------------------------------
+//  ここから トップへ戻るボタン-
+//-----------------------------------------------------
+
+#back-to-top {
+	position: sticky;
+	// position: fixed;
+	z-index: 1;
+	right: 0;
+	bottom: 0;
+	// display: flex;
+	visibility: hidden; /* マウスイベントを防ぐため */
+	// justify-content: flex-end;
+	width: vw(32);
+	height: vw(32);
+	padding-left: vw(374);
+	cursor: pointer;
+	transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
+	text-align: center;
+	opacity: 0; /* 最初は非表示 */
+	background: url(/assets/image/to-top_sp.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: contain;
+	@include mq() {
+		width: vwt(40);
+		height: vwt(40);
+		padding-left: calc(100% - 16px);
+		background: url(/assets/image/to-top.jpg);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-size: contain;
+	}
+	@include mq(lg) {
+		width: px2Rem(40);
+		height: px2Rem(40);
+	}
+}
+#back-to-top.show {
+	visibility: visible; /* クリック可能に */
+	opacity: 1; /* 表示 */
+}
+
+
+//-----------------------------------------------------
 //  ここから フッター
 //-----------------------------------------------------
 
@@ -1122,16 +1008,13 @@ $slick-opacity-not-active: 0.25 !default;
 	width: 100%;
 	height: vw(165);
 	margin: 0 auto;
-	// margin-top: vw(-32);
 	padding: 0;
 	background-color: #0071ce;
 	@include mq() {
 		height: vwt(104);
-		// margin-top: vwt(-40);
 	}
 	@include mq(lg) {
 		height: px2Rem(104);
-		// margin-top: vwt(-40);
 	}
 
 	&__footer-container {
@@ -1156,7 +1039,7 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 	&__footer-logo {
 		width: vw(162);
-		height: vw37();
+		height: vw(37);
 		margin-bottom: vw(25);
 		@include mq() {
 			width: vwt(186);
