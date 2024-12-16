@@ -30,40 +30,45 @@
 //  ここから TOPへ戻るボタン
 //-----------------------------------------------------
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const backToTopButton = document.getElementById('back-to-top');
-    const scrollThreshold = 200; // ボタンを表示するスクロール量
+//   document.addEventListener('DOMContentLoaded', () => {
+//     const backToTopButton = document.getElementById('back-to-top');
+//     const scrollThreshold = 200; // ボタンを表示するスクロール量
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollThreshold) {
-            backToTopButton.classList.add('show'); // フェードイン
-        } else {
-            backToTopButton.classList.remove('show'); // フェードアウト
-        }
-    });
+//     window.addEventListener('scroll', () => {
+//         if (window.scrollY > scrollThreshold) {
+//             backToTopButton.classList.add('show'); // フェードイン
+//         } else {
+//             backToTopButton.classList.remove('show'); // フェードアウト
+//         }
+//     });
 
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズスクロールで上に戻る
-    });
-});
-
-//-----------------------------------------------------
-//  ここから TOPへ戻るボタン 加工テスト
-//-----------------------------------------------------
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const to-topButton = document.getElementById('to-top');
-//   const scrollThreshold = 200; // ボタンを表示するスクロール量
-
-//   window.addEventListener('scroll', () => {
-//       if (window.scrollY > scrollThreshold) {
-//           to-topButton.classList.add('show'); // フェードイン
-//       } else {
-//           to-topButton.classList.remove('show'); // フェードアウト
-//       }
-//   });
-
-//   to-topButton.addEventListener('click', () => {
-//       window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズスクロールで上に戻る
-//   });
+//     backToTopButton.addEventListener('click', () => {
+//         window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズスクロールで上に戻る
+//     });
 // });
+
+// DOMが完全に読み込まれた後に実行する
+$(document).ready(function () {
+  // 'back-to-top'ボタンの要素を取得
+  const backToTopButton = $('#back-to-top');
+  // ボタンを表示するスクロール量を設定
+  const scrollThreshold = 200;
+
+  // スクロールイベントを監視
+  $(window).on('scroll', function () {
+      // 現在のスクロール位置がしきい値を超えた場合
+      if ($(window).scrollTop() > scrollThreshold) {
+          // 'show'クラスを追加してボタンを表示
+          backToTopButton.addClass('show');
+      } else {
+          // 'show'クラスを削除してボタンを非表示
+          backToTopButton.removeClass('show');
+      }
+  });
+
+  // 'back-to-top'ボタンがクリックされたときの処理
+  backToTopButton.on('click', function () {
+      // ページをスムーズにトップへスクロール
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+  });
+});
