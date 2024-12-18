@@ -428,7 +428,7 @@ li {
 }
 @media screen and (min-width: 1200px) {
   .product {
-    padding: px2rem(58) px2rem(20) px2rem(95) px2rem(20);
+    padding: 3.625rem 1.25rem 5.9375rem 1.25rem;
   }
 }
 .product__product-container {
@@ -468,7 +468,7 @@ li {
     padding-top: 1.6666666667vw;
     padding-right: 0;
     padding-left: 35vw;
-    margin-inine: auto;
+    margin-inline: auto;
   }
 }
 @media screen and (min-width: 1200px) {

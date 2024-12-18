@@ -406,7 +406,7 @@ li {
 		background-size: cover;
 	}
 	@include mq(lg) {
-		padding: px2rem(58) px2rem(20) px2rem(95) px2rem(20);
+		padding: px2Rem(58) px2Rem(20) px2Rem(95) px2Rem(20);
 	}
 	&__product-container {
 		display: flex;
@@ -426,7 +426,7 @@ li {
 			padding-right: 0;
 			padding-left: vwt(420);
 
-			margin-inine: auto ;
+			margin-inline: auto ;
 		}
 		@include mq(lg) {
 			max-width: px2Rem(1200);
