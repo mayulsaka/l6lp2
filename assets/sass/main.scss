@@ -4,25 +4,12 @@
 // scss: 変数設定
 //-----------------------------------------------------
 
-// カンプ / コンテンツ幅の指定
-$sp-full-width: 390;  // スマホ用のカンプ幅
-$pc-full-width: 1500;    // PC用のカンプ幅
-$pc-content-width: 1200; // PC用のカンプのコンテンツ幅(ガイド線の幅)
-
-// ブレークポイント設定
-// スマホ: 
-//    0px ~ 768px未満 -> スマホ用のカンプをベースにvwで実装
-// タブレット: 
-//    768px ~ PCコンテンツ幅未満 -> PC用のカンプをベースにvwで実装。予算の多い案件ではタブレット用のカンプが提供される場合もある。
-// PC: 
-//    PCコンテンツ幅以上 -> PC用のカンプをベースにpx(rem)で実装
+$sp-full-width: 390;
+$pc-full-width: 1500;
+$pc-content-width: 1200;
 $breakpoint-md: 768;
 $breakpoint-lg: $pc-content-width;
-
-// 本番用か否か？本番用の場合は1にする。
-// 0の場合はpxで出力される。パーフェクトピクセルで合わせる時に便利。
 $production: 1;
-// $production: 0; //Perfect Pixelの時だけ
 
 
 //-----------------------------------------------------
@@ -45,7 +32,6 @@ $breakpoints: (
 //  scss: 変換関数群
 //-----------------------------------------------------
 
-// SP用: vwへの変換
 @function vw($px) {
 	@if $production !=1 {
 		@return $px * 1px;
@@ -54,7 +40,6 @@ $breakpoints: (
 	@return calc($px * 100vw / $sp-full-width);
 }
 
-// タブレット用: vwへの変換
 @function vwt($px) {
 	@if $production !=1 {
 		@return $px * 1px;
@@ -63,7 +48,6 @@ $breakpoints: (
 	@return calc($px * 100vw / $pc-content-width);
 }
 
-// PC用: pxをremに変換
 @function px2Rem($px) {
 	@if $production !=1 {
 		@return $px * 1px;
@@ -72,9 +56,6 @@ $breakpoints: (
 	@return calc($px / 16) * 1rem;
 }
 
-// PC用: pxをvwに変換
-// ヘッダーなどコンテンツ幅ベースではなくかんぷ幅ベースでvwを使いたい場合に使用。
-// あまり使わない。
 @function vwp($px) {
 	@if $production !=1 {
 		@return $px * 1px;
@@ -126,13 +107,11 @@ img {
 
 a {
 	cursor: pointer;
-	// transition-duration: 0.3s;
 	text-decoration: none;
 }
 
 a:hover {
 	cursor: pointer;
-	// transition-timing-function: ease-out;
 	text-decoration: none;
 	opacity: 0.9;
 }
@@ -145,7 +124,7 @@ li {
 	list-style: none;
 }
 
-h2.lead {
+.lead {
 	> span {
 		display: block;
 		text-align: center;
@@ -244,13 +223,11 @@ h2.lead {
 		margin-bottom: vw(5);
 		text-align: left;
 		letter-spacing: vw(11);
-		// letter-spacing: 0.6875em;
 		font-size: vw(41);
 		line-height: calc(51 / 41);
 		@include mq() {
 			margin-bottom: vwt(6);
 			letter-spacing: vwt(14);
-			// letter-spacing: 0.875em;
 			font-size: vwt(50);
 			line-height: calc(68 / 50);
 		}
@@ -263,11 +240,9 @@ h2.lead {
 	&__main-title-second {
 		text-align: left;
 		letter-spacing: vw(6);
-		// letter-spacing: 0.375em;
 		font-size: vw(20);
 		@include mq() {
 			letter-spacing: vwt(7.5);
-			// letter-spacing: 0.46875em;
 			font-size: vwt(25);
 		}
 		@include mq(lg) {
@@ -302,7 +277,6 @@ h2.lead {
 		justify-content: center;
 		width: 100%;
 		max-width: vw(358);
-		// height: vw(261);
 		margin: 0 auto;
 		padding: vw(20) vw(29) vw(34) vw(29);
 		background-color: #f0f4ff;
@@ -322,17 +296,14 @@ h2.lead {
 	&__cta-title {
 		text-align: center;
 		letter-spacing: vw(1.8);
-		// letter-spacing: 0.1em;
 		color: #111;
 		font-size: vw(18);
 		@include mq() {
 			margin-bottom: vwt(3);
 			letter-spacing: vwt(2.4);
-			// letter-spacing: 0.15em;
 			font-size: vwt(24);
 		}
 		@include mq(lg) {
-			// margin-bottom: px2Rem(3);
 			letter-spacing: px2Rem(2.4);
 			font-size: px2Rem(24);
 		}
@@ -340,7 +311,6 @@ h2.lead {
 	&__cta-price {
 		text-align: center;
 		letter-spacing: vw(1.5);
-		// letter-spacing: 0.09375em;
 		color: #111;
 		font-size: vw(14);
 		@include mq() {
@@ -578,22 +548,18 @@ h2.lead {
 		flex-direction: column;
 		justify-content: space-between;
 		width: vw(280);
-		// height: vw(344);
 		margin-right: vw(15);
 		margin-left: vw(15);
 		padding: vw(40) vw(15) vw(25) vw(15);
 		background-color: #dbf7f9;
 		@include mq() {
-			// width: vwt(300);
 			max-width: 100%;
-			// height: vwt(388);
 			margin-right: vwt(15);
 			margin-left: vwt(15);
 			padding: vwt(40) vwt(20);
 		}
 		@include mq(lg) {
 			width: px2Rem(300);
-			// height: px2Rem(388);
 			margin-right: px2Rem(15);
 			margin-left: px2Rem(15);
 			padding: px2Rem(40) px2Rem(20);
@@ -978,14 +944,14 @@ $slick-opacity-not-active: 0.25 !default;
 	position: sticky;
 	z-index: 1;
 	bottom: vw(16);
-	visibility: hidden; /* マウスイベントを防ぐため */
+	visibility: hidden;
 	width: vw(40);
 	height: vw(40);
 	padding-left: calc(100% - vw(16));
 	cursor: pointer;
-	transition: opacity 0.3s, visibility 0.3s; /* フェードイン/アウトのアニメーション */
+	transition: opacity 0.3s, visibility 0.3s;
 	text-align: center;
-	opacity: 0; /* 最初は非表示 */
+	opacity: 0;
 	background: url(/assets/image/to-top_sp.svg);
 	background-repeat: no-repeat;
 	background-position: right bottom;
@@ -1008,8 +974,8 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 #back-to-top.show {
-	visibility: visible; /* クリック可能に */
-	opacity: 1; /* 表示 */
+	visibility: visible;
+	opacity: 1;
 }
 
 
