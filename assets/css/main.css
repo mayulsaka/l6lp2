@@ -369,7 +369,6 @@ li {
   border-radius: 7.4358974359vw;
   font-size: 4.6153846154vw;
   font-weight: 600;
-  line-height: 2.25;
 }
 @media screen and (min-width: 768px) {
   .button__button-link {
@@ -749,7 +748,7 @@ li {
 }
 @media screen and (min-width: 768px) {
   .slick-dots {
-    bottom: -3.8461538462vw;
+    bottom: -3.3333333333vw;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -763,7 +762,7 @@ li {
 }
 @media screen and (min-width: 768px) {
   .slick-dots li {
-    width: 0.3333333333vw;
+    width: 0.6666666667vw;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -777,7 +776,7 @@ li {
 }
 
 .slick-dots li button:before {
-  text-align: center;
+  text-align: left;
   opacity: 1;
   color: #eee;
   font-size: 2.5641025641vw;
@@ -847,28 +846,19 @@ li {
 .qa {
   position: relative;
   margin: 0 auto;
-  padding-top: 1rem;
-  padding-right: 4.1025641026vw;
-  padding-bottom: 7.6923076923vw;
-  padding-left: 4.1025641026vw;
+  padding: 4.1025641026vw 4.1025641026vw 7.6923076923vw 4.1025641026vw;
   background-image: -webkit-gradient(linear, left top, right top, from(#f4ffe8), to(#c6f0fe));
   background-image: linear-gradient(to right, #f4ffe8, #c6f0fe);
 }
 @media screen and (min-width: 768px) {
   .qa {
     margin: 0 auto;
-    padding-top: 2.9166666667vw;
-    padding-right: 3.3333333333vw;
-    padding-bottom: 3.3333333333vw;
-    padding-left: 3.3333333333vw;
+    padding: 2.9166666667vw 3.3333333333vw 3.3333333333vw 3.3333333333vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .qa {
-    padding-top: 2.1875rem;
-    padding-right: 2.5rem;
-    padding-bottom: 2.5rem;
-    padding-left: 2.5rem;
+    padding: 2.1875rem 2.5rem 2.5rem 2.5rem;
   }
 }
 .qa .lead {
@@ -946,11 +936,10 @@ li {
   padding-right: 3.8461538462vw;
   font-size: 4.1025641026vw;
   font-weight: 600;
-  line-height: 0;
 }
 @media screen and (min-width: 768px) {
   .accordion__question span, .accordion__answer span {
-    padding-right: 4.1025641026vw;
+    padding-right: 1.3333333333vw;
     font-size: 1.5vw;
   }
 }
@@ -1293,10 +1282,10 @@ li {
     gap: 1.875rem;
   }
 }
-.footer a {
+.footer__footer-link {
   color: #fff;
 }
-.footer a:hover {
+.footer__footer-link:hover {
   color: #fff;
 }
 .footer__footer-copywrite {

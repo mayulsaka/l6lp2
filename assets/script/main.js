@@ -1,6 +1,5 @@
- //-----------------------------------------------------
-//  ここから スライダー
-//-----------------------------------------------------
+
+// ---------- ここから スライダー ---------- 
 
   $('.visual').slick({
     dots: true,
@@ -8,16 +7,16 @@
     slidesToScroll:3,
     autoplay: false,
     autoplaySpeed: 5500,
-    prevArrow: '<img src="/assets/image/arrow_left_circle.svg" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="/assets/image/arrow_right_circle.svg" class="slide-arrow next-arrow">',
+    prevArrow: '<img src="/assets/image/arrow_left_circle.svg" class="slide-arrow prev-arrow" alt="">',
+    nextArrow: '<img src="/assets/image/arrow_right_circle.svg" class="slide-arrow next-arrow" alt="">',
     responsive: [
       {
         breakpoint: 767.9, 
         settings: {
           slidesToShow: 1,
           slidesToScroll:1,
-          prevArrow: '<img src="/assets/image/arrow_left_circle_sp.svg" class="slide-arrow prev-arrow sp">',
-          nextArrow: '<img src="/assets/image/arrow_right_circle_sp.svg" class="slide-arrow next-arrow sp">',
+          prevArrow: '<img src="/assets/image/arrow_left_circle_sp.svg" class="slide-arrow prev-arrow sp" alt="">',
+          nextArrow: '<img src="/assets/image/arrow_right_circle_sp.svg" class="slide-arrow next-arrow sp" alt="">',
         },
       }, 
       {
@@ -25,17 +24,15 @@
         settings: {
           slidesToShow: 2,
           slidesToScroll:2,
-          prevArrow: '<img src="/assets/image/arrow_left_circle.svg" class="slide-arrow prev-arrow sp">',
-          nextArrow: '<img src="/assets/image/arrow_right_circle.svg" class="slide-arrow next-arrow sp">',
+          prevArrow: '<img src="/assets/image/arrow_left_circle.svg" class="slide-arrow prev-arrow sp" alt="">',
+          nextArrow: '<img src="/assets/image/arrow_right_circle.svg" class="slide-arrow next-arrow sp" alt="">',
         },
       }, 
     ],
    });
 
 
-//-----------------------------------------------------
-//  ここから TOPへ戻るボタン
-//-----------------------------------------------------
+// ---------- ここから TOPへ戻るボタン ---------- 
 
 $(document).ready(function () {
     const backToTopButton = $('#back-to-top');
