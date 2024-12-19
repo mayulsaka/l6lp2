@@ -8,16 +8,16 @@
     slidesToScroll:3,
     autoplay: false,
     autoplaySpeed: 5500,
-    prevArrow: '<img src="/assets/image/arrow-left-circle.svg" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="/assets/image/arrow-right-circle.svg" class="slide-arrow next-arrow">',
+    prevArrow: '<img src="/assets/image/arrow_left_circle.svg" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="/assets/image/arrow_right_circle.svg" class="slide-arrow next-arrow">',
     responsive: [
       {
         breakpoint: 767.9, 
         settings: {
           slidesToShow: 1,
           slidesToScroll:1,
-          prevArrow: '<img src="/assets/image/arrow-left-circle_sp.svg" class="slide-arrow prev-arrow sp">',
-          nextArrow: '<img src="/assets/image/arrow-right-circle_sp.svg" class="slide-arrow next-arrow sp">',
+          prevArrow: '<img src="/assets/image/arrow_left_circle_sp.svg" class="slide-arrow prev-arrow sp">',
+          nextArrow: '<img src="/assets/image/arrow_right_circle_sp.svg" class="slide-arrow next-arrow sp">',
         },
       }, 
       {
@@ -25,8 +25,8 @@
         settings: {
           slidesToShow: 2,
           slidesToScroll:2,
-          prevArrow: '<img src="/assets/image/arrow-left-circle.svg" class="slide-arrow prev-arrow sp">',
-          nextArrow: '<img src="/assets/image/arrow-right-circle.svg" class="slide-arrow next-arrow sp">',
+          prevArrow: '<img src="/assets/image/arrow_left_circle.svg" class="slide-arrow prev-arrow sp">',
+          nextArrow: '<img src="/assets/image/arrow_right_circle.svg" class="slide-arrow next-arrow sp">',
         },
       }, 
     ],

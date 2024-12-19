@@ -163,14 +163,14 @@ li {
 	margin: 0 auto;
 	margin-bottom: vw(110);
 	padding: vw(30) vw(20) vw(400) vw(25);
-	background: url(/assets/image/main-visual_sp.jpg);
+	background: url(/assets/image/main_visual_sp.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	@include mq() {
 		margin-bottom: 0;
 		padding: vwt(40) vwt(20) vwt(380) vwt(20);
-		background: url(/assets/image/main-visual.jpg);
+		background: url(/assets/image/main_visual.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -834,12 +834,12 @@ $slick-opacity-not-active: 0.25 !default;
 		}
 	}
 	&__question:before {
-		background: url(/assets/image/caret-down_sp.png);
+		background: url(/assets/image/caret_down_sp.png);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
 		@include mq() {
-			background: url(/assets/image/caret-down.png);
+			background: url(/assets/image/caret_down.png);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
@@ -952,7 +952,7 @@ $slick-opacity-not-active: 0.25 !default;
 	transition: opacity 0.3s, visibility 0.3s;
 	text-align: center;
 	opacity: 0;
-	background: url(/assets/image/to-top_sp.svg);
+	background: url(/assets/image/to_top_sp.svg);
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	background-size: contain;
@@ -961,7 +961,7 @@ $slick-opacity-not-active: 0.25 !default;
 		width: vwt(40);
 		height: vwt(40);
 		padding-left: calc(100% - vwt(16));
-		background: url(/assets/image/to-top.svg);
+		background: url(/assets/image/to_top.svg);
 		background-repeat: no-repeat;
 		background-position: right bottom;
 		background-size: contain;

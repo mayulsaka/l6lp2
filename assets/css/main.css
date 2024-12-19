@@ -98,7 +98,7 @@ li {
   margin: 0 auto;
   margin-bottom: 28.2051282051vw;
   padding: 7.6923076923vw 5.1282051282vw 102.5641025641vw 6.4102564103vw;
-  background: url(/assets/image/main-visual_sp.jpg);
+  background: url(/assets/image/main_visual_sp.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -107,7 +107,7 @@ li {
   .main-visual {
     margin-bottom: 0;
     padding: 3.3333333333vw 1.6666666667vw 31.6666666667vw 1.6666666667vw;
-    background: url(/assets/image/main-visual.jpg);
+    background: url(/assets/image/main_visual.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -988,14 +988,14 @@ li {
   }
 }
 .accordion__question:before {
-  background: url(/assets/image/caret-down_sp.png);
+  background: url(/assets/image/caret_down_sp.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 @media screen and (min-width: 768px) {
   .accordion__question:before {
-    background: url(/assets/image/caret-down.png);
+    background: url(/assets/image/caret_down.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -1136,7 +1136,7 @@ li {
   transition: opacity 0.3s, visibility 0.3s;
   text-align: center;
   opacity: 0;
-  background: url(/assets/image/to-top_sp.svg);
+  background: url(/assets/image/to_top_sp.svg);
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
@@ -1147,7 +1147,7 @@ li {
     width: 3.3333333333vw;
     height: 3.3333333333vw;
     padding-left: calc(100% - 1.3333333333vw);
-    background: url(/assets/image/to-top.svg);
+    background: url(/assets/image/to_top.svg);
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
