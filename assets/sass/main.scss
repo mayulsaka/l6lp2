@@ -379,13 +379,13 @@ li {
 	max-width: 100%;
 	margin: 0 auto;
 	padding: vw(45) vw(18) vw(310) vw(18);
-	background: url(/assets/image/pht_product_sp.jpg);
+	background: url(/assets/image/product_sp.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	@include mq() {
 		padding: vwt(58) vwt(20) vwt(95) vwt(20);
-		background: url(/assets/image/pht_product.jpg);
+		background: url(/assets/image/product.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -798,12 +798,12 @@ $slick-opacity-not-active: 0.25 !default;
 		}
 	}
 	&__question:before {
-		background: url(/assets/image/caret_down_sp.png);
+		background: url(/assets/image/qa_caret_down_sp.png);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
 		@include mq() {
-			background: url(/assets/image/caret_down.png);
+			background: url(/assets/image/qa_caret_down.png);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;

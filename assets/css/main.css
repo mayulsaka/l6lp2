@@ -411,7 +411,7 @@ li {
   max-width: 100%;
   margin: 0 auto;
   padding: 11.5384615385vw 4.6153846154vw 79.4871794872vw 4.6153846154vw;
-  background: url(/assets/image/pht_product_sp.jpg);
+  background: url(/assets/image/product_sp.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -419,7 +419,7 @@ li {
 @media screen and (min-width: 768px) {
   .product {
     padding: 4.8333333333vw 1.6666666667vw 7.9166666667vw 1.6666666667vw;
-    background: url(/assets/image/pht_product.jpg);
+    background: url(/assets/image/product.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -977,14 +977,14 @@ li {
   }
 }
 .accordion__question:before {
-  background: url(/assets/image/caret_down_sp.png);
+  background: url(/assets/image/qa_caret_down_sp.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 @media screen and (min-width: 768px) {
   .accordion__question:before {
-    background: url(/assets/image/caret_down.png);
+    background: url(/assets/image/qa_caret_down.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
