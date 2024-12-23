@@ -19,20 +19,20 @@
           nextArrow: '<img src="/assets/image/voice_arrow_right_circle_sp.svg" class="slide-arrow next-arrow sp" alt="">',
         },
       }, 
-      {
-        breakpoint: 1200, 
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll:2,
-          prevArrow: '<img src="/assets/image/voice_arrow_left_circle.svg" class="slide-arrow prev-arrow sp" alt="">',
-          nextArrow: '<img src="/assets/image/voice_arrow_right_circle.svg" class="slide-arrow next-arrow sp" alt="">',
-        },
-      }, 
+      // {
+      //   breakpoint: 1200, 
+      //   settings: {
+      //     slidesToShow: 2,
+      //     slidesToScroll:2,
+      //     prevArrow: '<img src="/assets/image/voice_arrow_left_circle.svg" class="slide-arrow prev-arrow sp" alt="">',
+      //     nextArrow: '<img src="/assets/image/voice_arrow_right_circle.svg" class="slide-arrow next-arrow sp" alt="">',
+      //   },
+      // }, 
     ],
    });
 
 
-// ---------- ここから TOPへ戻るボタン ---------- 
+// ---------- TOPへ戻るボタン ---------- 
 
 $(document).ready(function () {
     const backToTopButton = $('#back-to-top');
