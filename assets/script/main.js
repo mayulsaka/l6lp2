@@ -1,26 +1,28 @@
 
 // ---------- ここから スライダー ---------- 
 
-  $('.visual').slick({
+$('.visual').slick({
     dots: true,
     slidesToShow: 3,
-    slidesToScroll:3,
+    slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 5500,
+    centerMode: true,
+    centerPadding: '0px',
     prevArrow: '<img src="/assets/image/voice_arrow_left_circle.svg" class="slide-arrow prev-arrow" alt="">',
     nextArrow: '<img src="/assets/image/voice_arrow_right_circle.svg" class="slide-arrow next-arrow" alt="">',
     responsive: [
-      {
-        breakpoint: 767.9, 
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll:1,
-          prevArrow: '<img src="/assets/image/voice_arrow_left_circle_sp.svg" class="slide-arrow prev-arrow sp" alt="">',
-          nextArrow: '<img src="/assets/image/voice_arrow_right_circle_sp.svg" class="slide-arrow next-arrow sp" alt="">',
+        {
+            breakpoint: 767.9,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<img src="/assets/image/voice_arrow_left_circle_sp.svg" class="slide-arrow prev-arrow sp" alt="">',
+                nextArrow: '<img src="/assets/image/voice_arrow_right_circle_sp.svg" class="slide-arrow next-arrow sp" alt="">',
+            },
         },
-      }, 
     ],
-   });
+});
 
 
 // TOPへ戻るボタン
